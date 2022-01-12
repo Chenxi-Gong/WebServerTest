@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=0.63,maximum-scale=1.0 ,user-scalable=no,charset=utf-8">
+<!--link href="mg.css" type="text/css" rel="stylesheet"-->
+<script>
+
+function one(){
+var q=document.getElementById("one_state").innerHTML;
+if(q=="unlocked"){
+var i=Number(document.getElementById("money").innerHTML);
+var j=i+1;
+document.getElementById("money").innerHTML=j;
+}
+if(j>=1000000000000000){
+document.getElementById("win_state").innerHTML="click now!";
+}
+}
+
+function two(){
+var q=document.getElementById("two_state").innerHTML;
+if(q=="unlocked"){
+var i=Number(document.getElementById("money").innerHTML);
+var j=i+33;
+document.getElementById("money").innerHTML=j;
+}
+if(j>=1000000000000000){
+document.getElementById("win_state").innerHTML="click now!";
+}
+}
+
+function three(){
+var q=document.getElementById("three_state").innerHTML;
+if(q=="unlocked"){
+var i=Number(document.getElementById("money").innerHTML);
+var j=i+666;
+document.getElementById("money").innerHTML=j;
+}
+if(j>=1000000000000000){
+document.getElementById("win_state").innerHTML="click now!";
+}
+}
+
+function four(){
+var q=document.getElementById("four_state").innerHTML;
+if(q=="unlocked"){
+var i=Number(document.getElementById("money").innerHTML);
+var j=i+100000;
+document.getElementById("money").innerHTML=j;
+}
+if(j>=1000000000000000){
+document.getElementById("win_state").innerHTML="click now!";
+}
+}
+
+function five(){
+var q=document.getElementById("five_state").innerHTML;
+if(q=="unlocked"){
+var i=Number(document.getElementById("money").innerHTML);
+var j=Math.floor(i*1.1);
+document.getElementById("money").innerHTML=j;
+}
+if(j>=1000000000000000){
+document.getElementById("win_state").innerHTML="click now!";
+}
+}
+
+//lock
+
+function unlock_one(){
+var i=Number(document.getElementById("money").innerHTML);
+var m=document.getElementById("one_state").innerHTML;
+if((i>=0)&&(m=="locked")){
+var j=i-0;
+document.getElementById("money").innerHTML=j;
+document.getElementById("one_state").innerHTML="unlocked";
+}
+if(j<1000000000000000){
+document.getElementById("win_state").innerHTML="you need to work hard!";
+}
+}
+
+function unlock_two(){
+var i=Number(document.getElementById("money").innerHTML);
+var m=document.getElementById("two_state").innerHTML;
+if((i>=50)&&(m=="locked")){
+var j=i-50;
+document.getElementById("money").innerHTML=j;
+document.getElementById("two_state").innerHTML="unlocked";
+}
+if(j<1000000000000000){
+document.getElementById("win_state").innerHTML="you need to work hard!";
+}
+}
+
+function unlock_three(){
+var i=Number(document.getElementById("money").innerHTML);
+var m=document.getElementById("three_state").innerHTML;
+if((i>=1000)&&(m=="locked")){
+var j=i-1000;
+document.getElementById("money").innerHTML=j;
+document.getElementById("three_state").innerHTML="unlocked";
+}
+if(j<1000000000000000){
+document.getElementById("win_state").innerHTML="you need to work hard!";
+}
+}
+
+function unlock_four(){
+var i=Number(document.getElementById("money").innerHTML);
+var m=document.getElementById("four_state").innerHTML;
+if((i>=50000)&&(m=="locked")){
+var j=i-50000;
+document.getElementById("money").innerHTML=j;
+document.getElementById("four_state").innerHTML="unlocked";
+}
+if(j<1000000000000000){
+document.getElementById("win_state").innerHTML="you need to work hard!";
+}
+}
+
+function unlock_five(){
+var i=Number(document.getElementById("money").innerHTML);
+var m=document.getElementById("five_state").innerHTML;
+if((i>=7700000)&&(m=="locked")){
+var j=i-7700000;
+document.getElementById("money").innerHTML=j;
+document.getElementById("five_state").innerHTML="unlocked";
+}
+if(j<1000000000000000){
+document.getElementById("win_state").innerHTML="you need to work hard!";
+}
+}
+
+//win
+
+function win(){
+var i=Number(document.getElementById("money").innerHTML);
+if(i>=1000000000000000){
+document.getElementById("win_state").innerHTML="You win! Congratulations!";
+alert("You win!!! Nothing is impossible to the hardworking!!!");
+}
+}
+
+</script>
+
+</head>
+<body>
+<h1><span>YOU HAVE:&nbsp&nbsp&nbsp&nbsp&nbsp$</span><span id="money">0</span></h1><br/>
+<table class="thetable">
+<tr>
+<td><button onclick="unlock_one()">unlock_with$0</button><button onclick="one()">collect_coins</button>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+<td><button onclick="unlock_four()">unlock_with$50000</button><button onclick="four()">gold_mining</button></td>
+</tr>
+<tr>
+<td><h6><span>"collect_coins"</span><span id="one_state">locked</span></h6></td>
+<td><h6><span>"gold_mining"</span><span id="four_state">locked</span></h6></td>
+</tr>
+<tr>
+<td><button onclick="unlock_two()">unlock_with$50</button><button onclick="two()">sell_paintings</button></td>
+<td><button onclick="unlock_five()">unlock_with$7700000</button><button onclick="five()">Daily_limit</button></td>
+</tr>
+<tr>
+<td><h6><span>"sell_paintings"</span><span id="two_state">locked</span></h6></td>
+<td><h6><span>"Daily_limit"</span><span id="five_state">locked</span></h6></td>
+</tr>
+<tr>
+<td><button onclick="unlock_three()">unlock_with$1000</button><button onclick="three()">breed_sheep</button></td>
+<td><button onclick="win()">win_with$1000000000000000</button></td>
+</tr>
+<tr>
+<td><h6><span>"breed_sheep"</span><span id="three_state">locked</span></h6></td>
+<td><h6><span id="win_state">you need to work hard!</span></h6></td>
+</tr>
+</table>
+
+</body>
+</html>

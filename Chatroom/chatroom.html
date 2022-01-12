@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1.0,user-scalable=no,charset=gbk">
+<script>
+var clock=self.setInterval("getText()",1000);
+function getText() {
+	var xhr = new XMLHttpRequest();
+	xhr.open("get","data.txt",false	);
+	xhr.send(null);
+	document.getElementById("text").innerHTML=xhr.responseText;
+}
+</script>
+</head>
+<body onload="getText();">
+<a href="index.html">返回首页</a><br/><br/>
+<text id="text"></text><br/>
+<!--<button onclick="getText()">刷新</button>-->
+<form method="post">
+	<input type="text" name="message" maxlength="32"><br>
+	<input type="submit" value="发送">
+</form>
+</body>
+</html>
